@@ -6,7 +6,8 @@ import string
 import json
 
 def starting_url(): 
-	url = 'https://www.alexa.com/topsites'
+	starting = ''.join(random.SystemRandom().choice(string.ascii_lowercase) for _ in range(3)) 
+	url = ''.join(['http://www.', starting, '.com']) 
 	return url
 
 def local_links(url, link): 
