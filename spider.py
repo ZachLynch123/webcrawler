@@ -36,6 +36,11 @@ def get_links(url):
 	except AttributeError as e: 
 		print(e)
 		print('likely got none. throwing error')
+		return []
+	except Exception as e: 
+		print (str(e))
+		# log this error
+		return []
 
 def main(): 
 	how_many = 50
