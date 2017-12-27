@@ -1,4 +1,4 @@
-from multiprocessing import pool
+from multiprocessing import Pool
 import bs4 as bs
 import random
 import requests
@@ -6,8 +6,7 @@ import string
 import json
 
 def starting_url(): 
-	starting = ''.join(random.SystemRandom().choice(string.ascii_lowercase) for _ in range(3))
-	url = ''.join(['http://www.', starting, '.com'])
+	url = 'https://www.alexa.com/topsites'
 	return url
 
 def local_links(url, link): 
