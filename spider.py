@@ -42,9 +42,18 @@ def main():
 	how_many = 50
 	p = Pool(processes=how_many)
 	parse_us = [starting_url() for _ in range (how_many)]
-	data = p.map(get_links [link for link parse_us])
+	data = p.map(get_links, [link for link in parse_us])
+	data = [url for url_list in data for url in url_list]
+	parse_us = data
+	p.close()
+
+	with open('urls.txt', 'w') as f: 
+		f.write(str(data))
 
 
+
+if __name__ == '__main__': 
+	main()
 
 
 
