@@ -38,7 +38,13 @@ def get_links(url):
 		print(e)
 		print('likely got none. throwing error')
 
-S
+def main(): 
+	how_many = 50
+	p = Pool(processes=how_many)
+	parse_us = [starting_url() for _ in range (how_many)]
+	data = p.map(get_links [link for link parse_us])
+
+
 
 
 
